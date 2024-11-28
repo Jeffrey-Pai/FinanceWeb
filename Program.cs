@@ -1,9 +1,15 @@
+using FinanceWeb.Services;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<ShioajiService>();
 
 var app = builder.Build();
+app.MapGet("/bb", () => "Hello World!");
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
