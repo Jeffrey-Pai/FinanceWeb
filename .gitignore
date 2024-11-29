@@ -362,5 +362,6 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-# appsetting
+# 忽略 appsettings.json 和其它環境配置文件
 appsettings.json
+appsettings.Development.json
