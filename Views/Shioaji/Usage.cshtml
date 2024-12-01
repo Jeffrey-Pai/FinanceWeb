@@ -1,0 +1,61 @@
+﻿@model dynamic 
+@{
+    ViewData["Title"] = "使用量訊息";
+}
+<style>
+        .usage-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .usage-details {
+        background-color: #f9fafb;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .usage-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .usage-label {
+        font-size: 18px;
+        font-weight: bold;
+        color: #4b5563;
+    }
+
+    .usage-value {
+        font-size: 18px;
+        font-weight: normal;
+        color: #2563eb;
+    }
+
+</style>
+
+<div class="usage-container">
+    <h1>@ViewData["Title"]</h1>
+
+    <div class="usage-details">
+        <div class="usage-item">
+            <span class="usage-label">Current Connections:</span>
+            <span class="usage-value">@Model.connections</span>
+        </div>
+        <div class="usage-item">
+            <span class="usage-label">Used Bytes:</span>
+            <span class="usage-value">@Model.bytes</span>
+        </div>
+        <div class="usage-item">
+            <span class="usage-label">Limit Bytes:</span>
+            <span class="usage-value">@Model.limit_bytes</span>
+        </div>
+        <div class="usage-item">
+            <span class="usage-label">Remaining Bytes:</span>
+            <span class="usage-value">@Model.remaining_bytes</span>
+        </div>
+    </div>
+</div>
